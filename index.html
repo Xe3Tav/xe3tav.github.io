@@ -4,21 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Newton Nutrition</title>
-  
-  <!-- Use Google Fonts for modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet" />
-  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="logo.jpg" alt="Newton Nutrition Logo" class="logo" />
-    <h1>Newton Nutrition</h1>
-    <p class="tagline">Fuel your ambition</p>
-    <p class="subtext">Release Date Coming Soon</p>
-    <p class="contact">
-      <a href="mailto:iantaviner@blueyonder.co.uk" class="btn-contact">📩 Contact Us</a>
-    </p>
-  </div>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <img src="logo.jpg" alt="Newton Nutrition Logo" />
+        <span>Newton Nutrition</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="container">
+      <img src="logo.jpg" alt="Newton Nutrition Logo" class="logo" />
+      <h1>Newton Nutrition</h1>
+      <p class="tagline">Fuel your ambition</p>
+      <p class="subtext">Release Date Coming Soon</p>
+      <p class="contact">
+        📩 <a href="mailto:iantaviner@blueyonder.co.uk" class="btn-contact">Contact Us</a>
+      </p>
+    </section>
+
+    <section id="about" class="container section-alt">
+      <h2>About Newton Nutrition</h2>
+      <p>Newton Nutrition is dedicated to fueling your ambition with high-quality, natural nutrition products designed for optimal performance and wellness.</p>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact Us</h2>
+      <p>Have questions? Reach out via email or follow us on social media.</p>
+      <p>📩 <a href="mailto:iantaviner@blueyonder.co.uk" class="btn-contact">Email Us</a></p>
+    </section>
+  </main>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        // Update active link
+        document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
