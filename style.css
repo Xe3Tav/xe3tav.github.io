@@ -85,3 +85,57 @@ h1 {
   outline: none;
   color: #1a1a1a;
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+  }
+
+  .subtext {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    width: 140px;
+    margin-bottom: 25px;
+  }
+
+  .contact .btn-contact {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .subtext {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 110px;
+    margin-bottom: 20px;
+  }
+
+  .contact .btn-contact {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}
