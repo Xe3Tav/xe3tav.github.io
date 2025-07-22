@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Newton Nutrition</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
@@ -13,7 +16,14 @@
         <img src="logo.jpg" alt="Newton Nutrition Logo" />
         <span>Newton Nutrition</span>
       </div>
-      <ul class="nav-links">
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -45,16 +55,26 @@
   </main>
 
   <script>
-    // Smooth scrolling for nav links
-    document.querySelectorAll('a.nav-link').forEach(link => {
+    const navLinks = document.getElementById('nav-links');
+    const hamburger = document.getElementById('hamburger');
+    const navLinkItems = document.querySelectorAll('.nav-link');
+
+    // Toggle menu
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    // Smooth scroll and close mobile menu
+    navLinkItems.forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
         document.querySelector(link.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
-        // Update active link
-        document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+
+        navLinkItems.forEach(nav => nav.classList.remove('active'));
         link.classList.add('active');
+        navLinks.classList.remove('show');
       });
     });
   </script>
